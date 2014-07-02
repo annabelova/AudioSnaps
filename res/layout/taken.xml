@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_clear_paper_2x" >
+
+    <RelativeLayout
+        android:id="@+id/under"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/txtFieldSendPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFieldSendPic"
+            android:layout_marginTop="7dp" >
+
+            <com.audiosnaps.view.CommentsEditText
+                android:id="@+id/commentsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:ems="10"
+                android:gravity="left"
+                android:lines="5"
+                android:maxLength="140"
+                android:popupBackground="@android:color/white"
+                android:hint="@string/PLACEHOLDER_CAPTION"/>
+
+            <TextView
+                android:id="@+id/lbContadorCaracteresCaption"
+                style="@style/TextoTinyStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/commentsTextView"
+                android:layout_alignRight="@+id/commentsTextView"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
+                android:text="140" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/txtFieldSendPic"
+            android:layout_marginLeft="8dp"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/btnFacebookSendPic"
+                style="@style/TextoButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:button="@drawable/button_facebook_comments_selector" />
+
+            <CheckBox
+                android:id="@+id/btnTwitterSendPic"
+                style="@style/TextoButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:button="@drawable/button_twitter_comment_selector" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:id="@+id/bt_visible"
+                        android:layout_width="109.52dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:background="@drawable/bt_visible_2x"
+                        android:text="@string/VISIBLE"
+                        android:textAppearance="@style/TextoNormalBoldStyle"
+                        android:textColor="@color/gris" />
+
+                    <Button
+                        android:id="@+id/bt_hidden"
+                        android:layout_width="109.52dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:background="@drawable/bt_hidden_2x"
+                        android:text="@string/HIDDEN"
+                        android:textAppearance="@style/TextoNormalBoldStyle"
+                        android:textColor="@color/gris"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bt_save"
+                    android:text="Save"
+                    android:textAppearance="@style/TextoNormalBoldStyle"
+                    android:textColor="@color/blanco" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/send_picture_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="@string/HELP_VISIBLE_ROCKSTAR"
+            android:textAppearance="@style/TextoNormalBoldStyle"
+            android:textColor="@color/gris_fuerte"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/over"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="-7dp"
+        android:background="@drawable/bg_black_568h_2x" >
+
+        <RelativeLayout
+            android:id="@+id/preview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp" >
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/sample" />
+
+            <ImageView
+                android:id="@+id/stamp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignBottom="@+id/picture"
+                android:layout_alignRight="@+id/picture"
+                android:focusable="true"
+                android:paddingRight="10dp"
+                android:layout_marginBottom="-6dp"
+                android:src="@drawable/bt_stamp_big_2x" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/dismissBtn"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/bt_dismiss" />
+
+        <ImageButton
+            android:id="@+id/okBtn"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bt_ok" />
+
+        <ImageButton
+            android:id="@+id/enhanceBtn"
+            android:layout_width="84dp"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bt_enhance"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

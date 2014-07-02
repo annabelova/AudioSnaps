@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearImageContainerFeed"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gris_claro"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/imageContainerFeed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <View
+            android:id="@+id/feedTopMargin"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp" />
+
+        <RelativeLayout
+            android:id="@+id/imageBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imageViewAudioSnap"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/picture_placeholder_small" />
+
+            <ImageView
+                android:id="@+id/PicCorners"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/pic_corners_2x" />
+
+            <ProgressBar
+                android:id="@+id/progressBarAudioSnap"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/btnStamp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignBottom="@+id/imageViewAudioSnap"
+                android:layout_alignRight="@+id/imageViewAudioSnap"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/bt_stamp_big_2x" />
+
+            <TextView
+                android:id="@+id/lblPrivateFeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/PRIVATE_FEED"
+                android:textColor="@color/gris"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/captionBox1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp">
+
+            <com.audiosnaps.view.TextViewFixTouchConsume
+                android:id="@+id/feedCaptionBox1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/feed_caption_box_2x"
+                android:lineSpacingMultiplier="0.9"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/feedCaptionFooter1"
+                style="@style/TextoLikeStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/feedCaptionBox1"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingLeft="14dp"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <TableRow
+            android:id="@+id/tableLikesCommentsFeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:weightSum="1" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnLikesFeed"
+                    style="@style/TextoLikeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_like_selector"
+                    android:gravity="bottom"
+                    android:paddingLeft="40dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45"
+                android:gravity="left"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnComentariosFeed"
+                    style="@style/TextoLikeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_comments_selector"
+                    android:gravity="bottom"
+                    android:paddingLeft="36dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.10"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnMasFeed"
+                    style="@style/TextoLikeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/button_options_now_selector"
+                    android:gravity="center" />
+            </LinearLayout>
+        </TableRow>
+
+        <RelativeLayout
+            android:id="@+id/captionBox2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/feedCaptionBox2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/feed_caption_box_2x"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/feedCaptionFooter2"
+                style="@style/TextoLikeStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/feedCaptionBox2"
+                android:gravity="bottom"
+                android:paddingBottom="5dp"
+                android:paddingLeft="14dp"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

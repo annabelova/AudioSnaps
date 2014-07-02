@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.audiosnaps"
+    android:versionCode="17"
+    android:versionName="0.9.5" >
+
+    <!-- If you forget to add this CAMERA_ADDON permission, a SecurityException occurs. -->
+    <uses-permission android:name="com.sonymobile.permission.CAMERA_ADDON" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus" />
+
+    <!-- CGM permissions -->
+    <permission
+        android:name="com.audiosnaps.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.audiosnaps.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!--
+         <compatible-screens>
+
+        <screen android:screenSize="small" android:screenDensity="ldpi" />
+        <screen android:screenSize="small" android:screenDensity="mdpi" />
+        <screen android:screenSize="small" android:screenDensity="hdpi" />
+        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+        <screen android:screenSize="small" android:screenDensity="xxhdpi" />
+
+        <screen android:screenSize="normal" android:screenDensity="ldpi" />
+        <screen android:screenSize="normal" android:screenDensity="mdpi" />
+        <screen android:screenSize="normal" android:screenDensity="hdpi" />
+        <screen android:screenSize="normal" android:screenDensity="xhdpi" />
+        <screen android:screenSize="normal" android:screenDensity="xxhdpi" />
+        </compatible-screens>
+    -->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="false" />
+
+    <!--
+    <uses-sdk
+	android:minSdkVersion="11"
+	android:targetSdkVersion="17" />
+    -->
+
+    <uses-sdk android:minSdkVersion="10"/>
+
+    <application
+        android:name="com.audiosnaps.BaseActivity"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        
+        <!--
+        android:required="false"|"true" is an implementation choice.
+        Put "true" if you only want the APK to be installed on Xperia devices
+        containing the library; "false" otherwise.
+        -->
+        <uses-library
+            android:name="com.sonymobile.camera.addon.api"
+            android:required="false" />
+        
+        <activity
+            android:name="com.audiosnaps.WelcomeActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.audiosnaps.MainActivity"
+            android:configChanges="keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.DiscoverHashtagActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.audiosnaps.discover" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.UserFeedActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.audiosnaps.feed" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.UserConfigActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.UserNotificationActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.CommentsActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.activities.UserFriendsFollowersActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.TakeAudioSnapActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan" >
+            
+            <intent-filter>
+                <action android:name="com.sonymobile.camera.addon.action.REGISTER_MODE" />
+            </intent-filter>
+            <meta-data android:name="com.sonymobile.camera.addon.MODE_ATTRIBUTES"
+                android:resource="@xml/mode" />
+            
+        </activity>
+        <activity
+            android:name="com.audiosnaps.SendAudioSnapActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+
+            <!--
+       <intent-filter>
+       <action android:name="android.intent.action.VIEW" />
+       <category android:name="android.intent.category.DEFAULT" />
+       <category android:name="android.intent.category.BROWSABLE" />
+       <data android:mimeType="image/jpg" />
+       <data android:mimeType="image/jpeg" />
+       </intent-filter>
+       <intent-filter>
+         <action android:name="android.intent.action.SEND_MULTIPLE" />
+         <category android:name="android.intent.category.DEFAULT" />
+         <data android:mimeType="image/jp*g" />
+       </intent-filter>
+            -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/jpg" />
+                <data android:mimeType="image/jpeg" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.audiosnaps.FullScreenPictureActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name="com.facebook.LoginActivity" />
+        <activity android:name="com.audiosnaps.login.LoginRegisterActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action." />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="com.audiosnaps.Twitter_oAuth"
+                    android:scheme="oauth" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.audiosnaps.ShotAudioSnapActivity" >
+        </activity>
+        <activity
+            android:name="com.audiosnaps.login.MailLoginActivity"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name="com.audiosnaps.login.MailRegisterActivity" >
+        </activity>
+        <activity android:name="com.audiosnaps.twitter.TwitterLoginActivity" >
+        </activity>
+        <activity android:name="com.audiosnaps.WebviewActivity" >
+        </activity>
+
+        <!-- GCM -->
+        <activity android:name=".GCMMessageView" >
+        </activity>
+
+        <activity android:name="com.facebook.sample.LoginActivitySample"/>
+        
+        <service android:name=".GCMIntentService" />
+
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.audiosnaps" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Facebook sdk -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+    </application>
+
+</manifest>

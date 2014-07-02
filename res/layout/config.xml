@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewConfig"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_clear_paper_2x" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="1" >
+
+            <!-- user avatar -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="6dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/mid_user_pic_border_and_placeholder" >
+
+                <ImageView
+                    android:id="@+id/imgAvatarConfig"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="1dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_launcher" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:orientation="vertical"
+                android:paddingLeft="5dp" >
+
+                <TextView
+                    style="@style/TextoNormalBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/TextoSmallStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info2" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <View
+                android:id="@+id/separador1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:id="@+id/linearUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp" >
+
+                <LinearLayout
+                    android:id="@+id/linearBioConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/BIO" />
+
+                    <EditText
+                        android:id="@+id/txtBioConfig"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_bio_textbox_2x"
+                        android:gravity="top"
+                        android:lines="3"
+                        android:maxLength="100"
+                        android:maxLines="3" />
+
+                    <TextView
+                        android:id="@+id/contadorCaracteresBioConfig"
+                        style="@style/TextoSmallStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:paddingRight="5dp"
+                        android:text="0" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextoNormalBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/PRIVACY_MODE" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:weightSum="2" >
+
+                    <com.audiosnaps.view.StretchableImageView
+                        android:id="@+id/btnRockstarConfig"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/rockstar_off" />
+
+                    <com.audiosnaps.view.StretchableImageView
+                        android:id="@+id/btnGrandmaConfig"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/grandma_off" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/privacyModeText"
+                    style="@style/TextoSmallStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/GRANDMA_COPY" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separador2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:id="@+id/linearShares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <RelativeLayout
+                    android:id="@+id/relativeFacebookShareConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <CheckBox
+                        android:id="@+id/checkBoxShareLikesFacebookConfig"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical" />
+                    
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/checkBoxShareLikesFacebookConfig"
+                        android:layout_alignBottom="@+id/checkBoxShareLikesFacebookConfig"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/SHARE_LIKES_IN_FACEBOOK" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeTwitterShareConfig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <CheckBox
+                        android:id="@+id/checkBoxShareLikesTwitterConfig"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/checkBoxShareLikesTwitterConfig"
+                        android:layout_alignBottom="@+id/checkBoxShareLikesTwitterConfig"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/SHARE_LIKES_IN_TWITTER" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separador3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:id="@+id/linearPictures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <CheckBox
+                        android:id="@+id/checkBoxSaveLibraryConfig"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/checkBoxSaveLibraryConfig"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="80dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/SAVE_TO_LIBRARY" />
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/TextoSmallStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/WARNING_LIBRARY_2" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separador4"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:id="@+id/linearNotifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    style="@style/TextoNormalBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/TIME_BETWEEN_NOTIFICATIONS" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:weightSum="1" >
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NOTIFICATIONS_IN_FACEBOOK" />
+
+                    <Spinner
+                        android:id="@+id/spinnerInFacebookConfig"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:weightSum="1" >
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NOTIFICATIONS_IN_MY_ANDROID" />
+
+                    <Spinner
+                        android:id="@+id/spinnerInMyPhoneConfig"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:weightSum="1" >
+
+                    <TextView
+                        style="@style/TextoNormalBoldStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/NOTIFICATIONS_BY_EMAIL" />
+
+                    <Spinner
+                        android:id="@+id/spinnerByEmailConfig"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/seporador5"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:id="@+id/linearUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <TextView
+                    style="@style/TextoNormalBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CHANGE_USERNAME" />
+
+                <RelativeLayout
+                    android:id="@+id/usernameBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/register_textfield_2x" >
+
+                    <EditText
+                        android:id="@+id/txtUserNameConfig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:inputType="text" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:maxHeight="28dp"
+                        android:maxWidth="28dp"
+                        android:minHeight="28dp"
+                        android:minWidth="28dp"
+                        android:paddingRight="10dp"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/userNameCheck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/form_ok_2x"
+                        android:paddingRight="7dp"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/lblTuPaginaDePerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/USER_PAGE" />
+            </LinearLayout>
+
+            <!-- <View -->
+            <!-- android:id="@+id/seporador5b" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="1dp" -->
+            <!-- android:layout_marginBottom="15dp" -->
+            <!-- android:layout_marginTop="15dp" -->
+            <!-- android:background="@color/gris" /> -->
+
+            <LinearLayout
+                android:id="@+id/linearSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <!-- <TextView -->
+                <!-- style="@style/TextoNormalBoldStyle" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="@string/YOUR_EMAIL" /> -->
+
+
+                <!-- <RelativeLayout -->
+                <!-- android:id="@+id/mailBox" -->
+                <!-- android:layout_width="match_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:background="@drawable/register_textfield_2x" > -->
+
+
+                <!-- <ImageView -->
+                <!-- android:id="@+id/bg_mail" -->
+                <!-- android:layout_width="match_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:src="@drawable/register_textfield_2x" /> -->
+
+
+                <!-- <EditText -->
+                <!-- android:id="@+id/txtEmailConfig" -->
+                <!-- android:layout_width="match_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_centerInParent="true" -->
+                <!-- android:layout_marginBottom="10dp" -->
+                <!-- android:layout_marginLeft="5dp" -->
+                <!-- android:layout_marginRight="5dp" -->
+                <!-- android:background="@null" -->
+                <!-- android:ems="10" -->
+                <!-- android:inputType="textEmailAddress" > -->
+                <!-- </EditText> -->
+
+
+                <!-- <ProgressBar -->
+                <!-- android:id="@+id/progressBarMail" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_alignParentRight="true" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:maxHeight="28dp" -->
+                <!-- android:maxWidth="28dp" -->
+                <!-- android:minHeight="28dp" -->
+                <!-- android:minWidth="28dp" -->
+                <!-- android:paddingRight="10dp" -->
+                <!-- android:visibility="invisible" /> -->
+
+
+                <!-- <ImageView -->
+                <!-- android:id="@+id/mailCheck" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_alignParentRight="true" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:background="@drawable/form_ok_2x" -->
+                <!-- android:paddingRight="7dp" -->
+                <!-- android:visibility="invisible" /> -->
+                <!-- </RelativeLayout> -->
+
+                <RelativeLayout
+                    android:id="@+id/btnSaveConfigLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp" >
+
+                    <ImageView
+                        android:id="@+id/btnSaveConfig"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/button_login_selector" />
+
+                    <TextView
+                        android:id="@+id/btnSaveConfigTxt"
+                        style="@style/welcomeButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/SAVE"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center|center_vertical"
+    android:background="@android:color/transparent"
+    android:paddingLeft="8dp"
+    android:paddingBottom="8dp"
+    android:orientation="vertical">
+
+    <com.audiosnaps.view.SquareImageView
+        android:id="@+id/pictureDiscover"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:adjustViewBounds="true"
+        android:background="@drawable/picture_border" />
+    
+     <ProgressBar
+            android:id="@+id/progressBarDiscover"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:focusable="false"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+</RelativeLayout>

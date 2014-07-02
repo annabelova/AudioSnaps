@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+
+    <!-- Replace placeholder ID with your tracking ID -->
+    <string name="ga_trackingId">UA-241821-44</string>
+
+    <!-- Enable automatic activity tracking -->
+    <bool name="ga_autoActivityTracking">true</bool>
+
+    <!-- Enable automatic exception tracking -->
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+     
+   <!-- Enable debug -->
+   <bool name="ga_debug">true</bool>
+
+ 
+   <!--
+   The inverval of time after all the collected data
+   should be sent to the server, in seconds.
+   -->
+   <integer name="ga_dispatchPeriod">60</integer>
+
+</resources>

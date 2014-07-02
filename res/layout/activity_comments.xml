@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/feedComments2"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignTop="@+id/feedPhoto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tableUserInfoMe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_clear_paper_2x"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <!-- etxt comments -->
+
+        <ScrollView
+            android:id="@+id/scrollViewFeedComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="45dp" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCommentFeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp" >
+
+                    <com.audiosnaps.view.CommentsEditText
+                        android:id="@+id/txtCommentFeed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bg_comment_textfield"
+                        android:gravity="left"
+                        android:hint="@string/PLACEHOLDER_COMMENTS"
+                        android:lines="3"
+                        android:maxLength="140"
+                        android:popupBackground="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lblContadorCaracteresCommentsFeed"
+                        style="@style/TextoTinyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="1dp"
+                        android:text="140" />
+                </LinearLayout>
+
+                <!-- buttons -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+
+                    <Button
+                        android:id="@+id/btnCommentFeed"
+                        style="@style/TextoButtonStyle"
+                        android:layout_width="140dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/button_comment_selector"
+                        android:text="@string/COMMENT" />
+
+                    <CheckBox
+                        android:id="@+id/btnTwitterCommentFeed"
+                        style="@style/TextoButtonStyle"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignBaseline="@+id/btnCommentFeed"
+                        android:layout_alignBottom="@+id/btnCommentFeed"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="40dp"
+                        android:button="@drawable/button_twitter_comment_selector" />
+
+                    <CheckBox
+                        android:id="@+id/btnFacebookCommentFeed"
+                        style="@style/TextoButtonStyle"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignBaseline="@+id/btnTwitterCommentFeed"
+                        android:layout_alignBottom="@+id/btnTwitterCommentFeed"
+                        android:layout_alignParentLeft="true"
+                        android:button="@drawable/button_facebook_comments_selector" />
+                </RelativeLayout>
+
+                <!-- comments list -->
+
+                <LinearLayout
+                    android:id="@+id/listCommentsFeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/headerListCommentsFeed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/listViewCommentsFeed"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/comments_table_header" />
+
+                    <TableLayout
+                        android:id="@+id/tableViewCommentsFeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@drawable/comments_table_body"
+                        android:stretchColumns="true" >
+                    </TableLayout>
+
+                    <ImageView
+                        android:id="@+id/footerListCommentsFeed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/listViewCommentsFeed"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/comments_table_footer" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

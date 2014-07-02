@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:scaleType="center">
+
+    <FrameLayout
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_black_568h_rot_2x"
+        android:adjustViewBounds="true"/>
+
+    <ImageButton
+        android:id="@+id/flashBtn"
+        android:layout_width="72dip"
+        android:layout_height="36dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dip"
+        android:background="@drawable/bt_flash_off_2x" />
+
+    <ImageButton
+        android:id="@+id/flipBtn"
+        android:layout_width="72dip"
+        android:layout_height="36dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/bt_flip_camera_2x" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bg_black_568h_2x" />
+
+    <ImageButton
+        android:id="@+id/formatBtn"
+        android:layout_width="72dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="90dp"
+        android:background="@drawable/bt_format_1_1" />
+
+    <ImageView
+        android:id="@+id/takePicBtnBg"
+        android:layout_width="57dip"
+        android:layout_height="44dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bt_take_pic_bg_2x" />
+    
+    <ImageView
+        android:id="@+id/takePicBtnBgFlow"
+        android:layout_width="57dip"
+        android:layout_height="44dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/takePicBtnBg"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="-5dp"
+        android:background="@drawable/bt_take_pic_bg_flow_2x" />
+
+    <ImageView
+        android:id="@+id/takePicBtn"
+        android:layout_width="68.4dip"
+        android:layout_height="52.8dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bt_take_pic_2x" />
+
+    <ImageButton
+        android:id="@+id/cancelBtn"
+        android:layout_width="72dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="90dp"
+        android:background="@drawable/bt_cancel" />
+    
+    <ImageView
+        android:id="@+id/over"
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_black_568h_2x" />
+
+    <ImageButton
+        android:id="@+id/mode_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/button_background"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mode_icon" />
+
+    <ImageButton
+        android:id="@+id/thumbnail_button"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="12dp" />
+
+    <FrameLayout
+        android:id="@+id/modeselector_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="48dp" >
+    </FrameLayout>
+
+</RelativeLayout>

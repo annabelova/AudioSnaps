@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_clear_paper_2x" >
+
+<LinearLayout
+     	android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_top_bar_2x"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/LOGIN"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:typeface="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="34dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginTop="34dp"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:id="@+id/shadowTabs"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:src="@drawable/login_icon_2x" />
+
+            <TextView
+                android:id="@+id/title_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="@string/LOGIN_TITLE_MESSAGE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="18sp" />
+        </LinearLayout>
+        
+        
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp" >
+
+            <RelativeLayout
+                android:id="@+id/bt_login_fb_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="12dp" >
+
+                <Button
+                    android:id="@+id/authButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="left|center_vertical"
+                    android:textSize="14sp"
+                    android:text="@string/LOGIN_WITH_FACEBOOK"
+                    style="@style/FacebookLoginButton" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bt_login_tw_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bt_login_fb_box"
+                android:layout_marginBottom="12dp" >
+
+                <Button
+                    android:id="@+id/bt_login_tw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    style="@style/welcomeButtonStyle"
+                    android:text="@string/LOGIN_WITH_TWITTER"
+                    android:textSize="14sp"
+                    android:gravity="left|center_vertical"
+                    android:background="@drawable/bt_login_tw" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bt_login_mail_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bt_login_tw_box"
+                android:layout_marginBottom="12dp" >
+
+                <Button
+                    android:id="@+id/bt_login_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/LOGIN_WITH_MAIL"
+                    android:textSize="14sp"
+                    android:gravity="left|center_vertical"
+                    style="@style/welcomeButtonStyle"
+                    android:background="@drawable/bt_login_mail" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+	</LinearLayout>
+        <TextView
+            android:id="@+id/termsOfUse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="35dp"
+            android:gravity="center_horizontal"
+            android:text="@string/TERMS_AND_CONDITIONS" />
+
+    <LinearLayout
+        android:id="@+id/termsOfUseWeb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        
+         <TextView
+            android:id="@+id/header2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_top_bar_2x"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/TERMS_WEBVIEW_TITLE"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:typeface="normal" />
+         
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        
+    </LinearLayout>
+        
+
+</RelativeLayout>

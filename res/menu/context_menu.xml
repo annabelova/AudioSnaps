@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+    <item android:id="@+id/ocultar_mostrar"
+        android:title="Ocultar/Mostrar" />
+ 
+    <item android:id="@+id/borrar"
+        android:title="@string/DELETE_PICTURE" />
+ 
+    <item android:id="@+id/report"
+        android:title="@string/REPORT_PICTURE" />
+ 
+    <item android:id="@+id/foto_perfil"
+        android:title="@string/SET_AS_PROFILE_PICTURE" />
+ 
+    <item android:id="@+id/enviar_correo"
+        android:title="@string/SEND_BY_EMAIL" />
+ 
+    <item android:id="@+id/enviar_whatsapp"
+        android:title="@string/SEND_BY_WHATSAPP" />
+ 
+    <item android:id="@+id/share_fb"
+        android:title="Compartir en FB" />
+ 
+    <item android:id="@+id/share_tw"
+        android:title="Compartir en TW" />
+ 
+</menu>

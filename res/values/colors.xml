@@ -1,0 +1,19 @@
+<resources>
+
+    <color name="negro">#000000</color>
+    <color name="blanco">#ffffff</color>
+    <color name="azul">#3399FF</color>
+    <color name="gris">#C0C0C0</color>
+    <color name="gris_fuerte">#CCCCCC</color>
+    <color name="gris_claro">#EEEEEE</color>
+    <color name="gris_claro_mentions">#EFEFEF</color>
+    <color name="gris_notificaciones">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="comentari">#393939</color>
+    <color name="hashtag">#4d4134</color>
+    <color name="mention">#000000</color>
+    <color name="user">#808080</color>
+    <color name="gris_loading">#DCDCDC</color>
+    
+</resources>

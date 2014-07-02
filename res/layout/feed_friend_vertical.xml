@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.audiosnaps.ObservableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+        android:overScrollMode="never"
+    android:fadingEdge="none"
+    android:fadingEdgeLength="0dp"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+        <LinearLayout
+              android:id="@+id/feedFriendViewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+</com.audiosnaps.ObservableScrollView>

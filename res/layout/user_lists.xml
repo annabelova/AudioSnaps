@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Detail list for friends and followers from a feed -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_clear_paper_2x" >
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/listViewFeedFriends"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:smoothScrollbar="true"
+            android:visibility="visible" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/listViewFeedFollowers"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:smoothScrollbar="true"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnRetryFeedFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/retry"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+</LinearLayout>

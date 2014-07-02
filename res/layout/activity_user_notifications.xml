@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableUserInfoNotifications"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_claro"
+    android:orientation="vertical"
+    android:visibility="visible" >
+        <ListView
+            android:id="@+id/listViewNotifications2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_notifications_table_2x"
+            android:cacheColorHint="@android:color/transparent"
+            android:clickable="true"
+            android:divider="@color/gris_claro"
+            android:dividerHeight="0.5dp"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:padding="2dp" >
+        </ListView>
+   
+</LinearLayout>

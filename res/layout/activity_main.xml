@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <!-- VIEW FLIPPER -->
+
+    <ViewFlipper 
+		android:id="@+id/viewFlipper"
+		android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/footerTabs" >
+    
+        
+        <!-- <include android:id="@+id/feed"  layout="@layout/feed" /> -->
+
+		<include android:id="@+id/friends"  layout="@layout/friends" />
+		<include android:id="@+id/feed"  layout="@layout/feed_vertical_listview" />
+		<include android:id="@+id/me_and_mine"  layout="@layout/feed_friend_vertical_listview" />
+<!-- 				<include android:id="@+id/me_and_mine"  layout="@layout/me_and_mine" /> -->
+		<include android:id="@+id/discover"  layout="@layout/discover" />
+		<include android:id="@+id/config"  layout="@layout/config" />
+		<include android:id="@+id/friend_feed"  layout="@layout/feed_friend_vertical_listview" />
+		<include android:id="@+id/user_friends_followers_lists"  layout="@layout/user_lists" />
+    </ViewFlipper>
+
+    <!-- FOOTER -->
+
+    <LinearLayout
+        android:id="@+id/footerTabs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:orientation="vertical" >
+ 
+        <ImageView
+	        android:id="@+id/shadowTabs"
+	        android:layout_width="fill_parent"
+	        android:layout_height="3dp"
+	        android:background="@android:color/transparent" 
+	        android:src="@drawable/shadow_tabbar" />
+      
+        <include layout="@layout/footer_tabs" />
+    </LinearLayout>
+
+</RelativeLayout>

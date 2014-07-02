@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_black_568h_2x"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bt_multi_select_2x"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnListFriends"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+            android:background="@android:color/transparent"
+            android:text="@string/FRIENDS"
+            android:textColor="@color/bt_multi_text_color" />
+
+        <ImageView
+            android:id="@+id/separatorMulti1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:background="@drawable/bt_multi_select_bar_2x"/>
+
+        <Button
+            android:id="@+id/btnListFollowers"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+            android:background="@android:color/transparent"
+            android:text="@string/FOLLOWERS"
+            android:textColor="@color/bt_multi_text_color" />
+
+        <View
+            android:id="@+id/separatorMulti2"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bt_multi_select_bar_2x"
+            android:scaleType="centerCrop" />
+
+        <Button
+            android:id="@+id/btnListSuggested"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+            android:background="@android:color/transparent"
+            android:text="@string/SUGGESTED"
+            android:textColor="@color/bt_multi_text_color" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:gravity="center|center_vertical"
+        android:padding="4dp"
+        android:weightSum="1" >
+
+        <EditText
+            android:id="@+id/txtBuscadorFriends"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_bio_textbox_2x"
+            android:gravity="center_vertical"
+            android:hint="@string/FILTER"
+            android:inputType="textPersonName"
+            android:maxLength="30" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageView
+            android:id="@+id/btnBorrarTexto"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:background="@drawable/bg_clear_paper_2x">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/listViewFriends"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:smoothScrollbar="true"
+        	android:fadingEdge="none"
+        	android:listSelector="@android:color/transparent"
+            android:visibility="visible" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/listViewFollowers"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:smoothScrollbar="true"
+        	android:fadingEdge="none"
+        	android:listSelector="@android:color/transparent"
+            android:visibility="visible" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/listViewSuggested"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:smoothScrollbar="true"
+        	android:fadingEdge="none"
+        	android:listSelector="@android:color/transparent"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnRetryFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/retry"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

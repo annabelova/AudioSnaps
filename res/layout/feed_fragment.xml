@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/negro"
+    android:orientation="vertical" >
+
+    <!-- Feed header -->
+    <LinearLayout
+        android:id="@+id/feedHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include layout="@layout/feed_header" />
+    </LinearLayout>   
+    <!-- Feed user info -->
+    <LinearLayout
+        android:id="@+id/feedUserInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedHeader"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        <include layout="@layout/feed_user_info" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/feedPhoto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedUserInfo"
+        android:layout_marginBottom="-10dp"
+        android:layout_marginTop="-5dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical" >
+        <include layout="@layout/feed_photo" />
+    </RelativeLayout>    
+    <!-- Feed comments -->
+    <LinearLayout
+        android:id="@+id/feedComments"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/feedPhoto"
+        android:orientation="vertical"
+        android:visibility="gone" >
+        <include layout="@layout/feed_comments" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+    <item android:id="@+id/bloquear"
+        android:title="@string/BLOCK_USER" />
+ 
+    <item android:id="@+id/cancelar"
+        android:title="@string/CANCEL" />
+ 
+</menu>

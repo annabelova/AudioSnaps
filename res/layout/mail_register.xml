@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_clear_paper_2x"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_top_bar_2x"
+        android:gravity="center_vertical|center_horizontal"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:typeface="normal" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/formBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/usernameTitleBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp" >
+
+            <TextView
+                android:id="@+id/usernameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SELECT_USERNAME" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/usernameBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_textfield_2x" >
+
+            <!-- <ImageView -->
+            <!-- android:id="@+id/bg_username" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:background="@drawable/register_textfield_2x" /> -->
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@null"
+                android:inputType="text"
+                android:ems="10" />
+
+            <ProgressBar
+                android:id="@+id/progressBarUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:maxHeight="28dp"
+                android:maxWidth="28dp"
+                android:minHeight="28dp"
+                android:minWidth="28dp"
+                android:paddingRight="10dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/userNameCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/form_ok_2x"
+                android:paddingRight="7dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/mailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/YOUR_EMAIL" />
+
+        <RelativeLayout
+            android:id="@+id/mailBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_textfield_2x" >
+
+            <!-- <ImageView -->
+            <!-- android:id="@+id/bg_mail" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:src="@drawable/register_textfield_2x" /> -->
+
+            <EditText
+                android:id="@+id/mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@null"
+                android:inputType="textEmailAddress"
+                android:ems="10" >
+            </EditText>
+
+            <ProgressBar
+                android:id="@+id/progressBarMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:maxHeight="28dp"
+                android:maxWidth="28dp"
+                android:minHeight="28dp"
+                android:minWidth="28dp"
+                android:paddingRight="10dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/mailCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/form_ok_2x"
+                android:paddingRight="7dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pwdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/CREATE_PASSWORD" />
+
+        <RelativeLayout
+            android:id="@+id/pwdBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_textfield_2x" >
+
+            <!-- <ImageView -->
+            <!-- android:id="@+id/bg_pwd" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:background="@drawable/register_textfield_2x" /> -->
+
+            <EditText
+                android:id="@+id/pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:id="@+id/pwd1Check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/form_ok_2x"
+                android:paddingRight="7dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pwd2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/PASSWORD_AGAIN" />
+
+        <RelativeLayout
+            android:id="@+id/pwd2Box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_textfield_2x" >
+
+            <!-- <ImageView -->
+            <!-- android:id="@+id/bg_pwd2" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:src="@drawable/register_textfield_2x" /> -->
+
+            <EditText
+                android:id="@+id/pwd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@null"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:id="@+id/pwd2Check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/form_ok_2x"
+                android:paddingRight="7dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/nextBtn"
+            style="@style/welcomeButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bt_next"
+            android:text="@string/NEXT"
+            android:textAllCaps="true" />
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

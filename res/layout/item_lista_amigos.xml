@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <ImageView
+            android:id="@+id/imgAvatarFriendList"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:background="@color/gris_loading" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.50"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/lblUserNameFriendList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblUserRelationFriendList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.35"
+        android:gravity="center|center_vertical"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <com.audiosnaps.view.AutoResizeTextButton
+            android:id="@+id/btnRelation"
+            style="@style/TextoButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="28dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:focusable="false"
+            android:visibility="gone"
+            android:background="@drawable/button_add_friend_selector" />
+
+        <ProgressBar
+            android:id="@+id/progressBarRelation"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:focusable="false"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

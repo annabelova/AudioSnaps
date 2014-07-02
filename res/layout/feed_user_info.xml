@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableUserInfoFeed"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_claro"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:baselineAligned="false"
+        android:weightSum="1" >
+
+        <!-- user avatar -->
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="6dp"
+            android:layout_weight="0.25"
+            android:background="@drawable/mid_user_pic_border_and_placeholder" >
+
+            <ImageView
+                android:id="@+id/imgUserInfoAvatarFeed"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="1dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mid_user_pic_border_and_placeholder" />
+
+            <ImageView
+                android:id="@+id/imgLockUserInfoAvatar"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_lock_2x"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progressBarUserInfoAvatarFeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <!-- user details -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.75"
+            android:orientation="vertical"
+            android:weightSum="1" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblUserNameFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/lblUserRelationUserInfoFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:text=""
+                        android:textColor="@color/gris"
+                        android:textSize="11sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+ 
+                <ImageView
+                    android:id="@+id/btnOptionsNowFeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/bt_extra_profile_2x" />
+
+            </RelativeLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_stats"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:id="@+id/linearUserPictures"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/PICTURES"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/lblPicturesFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearUserFriends"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FRIENDS"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/lblFriendsFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearUserFollowers"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/FOLLOWERS"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/lblFollowersFeed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </TableRow>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearBioFeed"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/bg_caption"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblCaptionFeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp" >
+
+        <LinearLayout
+            android:id="@+id/linearButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:weightSum="1" >
+            
+                
+                    <Button
+                android:id="@+id/btnNotifications"
+                style="@style/TextoButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_config_selector"                
+                android:text="@string/NOTIFICATIONS" />
+
+            <Button
+                android:id="@+id/btnConfigMe"
+                style="@style/TextoButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_config_selector"
+                android:visibility="gone"
+                android:text="@string/CONFIG" />
+ 	
+            <Button
+                android:id="@+id/btnLogoutMe"
+                style="@style/TextoButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_logout_selector"
+                android:visibility="gone"
+                android:text="@string/LOGOUT" />
+                 
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFollowFeed"
+            style="@style/TextoButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/button_config_selector"
+            android:clickable="true"
+            android:text="@string/FOLLOW"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/progressBarButtonFollowFeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frameUserNotifications"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:foreground="@drawable/notifications_border_cover_2x"
+        android:visibility="gone" >
+
+        <ListView
+            android:id="@+id/listViewNotifications"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_notifications_table_2x"
+            android:cacheColorHint="@android:color/transparent"
+            android:clickable="true"
+            android:divider="@color/gris_claro"
+            android:dividerHeight="0.5dp"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:padding="2dp" >
+        </ListView>
+    </FrameLayout>
+
+</LinearLayout>

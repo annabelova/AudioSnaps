@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="mode_selector_label">AudioSnaps</string>
+    <string name="mode_shortcut_label">AudioSnaps</string>
+    <string name="mode_description_label">Take pictures with sound. Start capturing moments.</string>
+
+    <!-- GMC -->
+    <string name="msglbl">"Message : "</string>
+
+    <!-- Facebook -->
+    <string name="app_id">133769403447369</string>
+    <string name="facebook_app_secret_id">986399c6ecf0f59129a6e922cc271cce</string>
+
+    <!-- Main -->
+    <string name="app_name">AudioSnaps</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Notifications -->
+    <string name="loading">Loading</string>
+    <string name="networkError">Network error</string>
+    <string name="emailInUse">E-mail already in use</string>
+    <string name="loginError">Login error</string>
+    
+    <string name="noSD">We couldn\'t find an SD Card. You need an SD Card to run AudioSnaps</string>
+    <string name="noConnection">No internet connection. You must be online to upload pictures</string>
+    <string name="uploadedOk">Picture uploaded</string>
+    <string name="notUploadedTitle">Picture not uploaded</string>
+    <string name="notUploaded">We couldn\'t upload your picture, probably due to a bad connection. It has been stored in your gallery so you can upload it later</string>
+    <string name="noNewAudioSnaps">There aren\'t new AudioSnaps</string>
+
+    <!-- Friends page -->
+    <string name="retry">Retry</string>
+
+    <!-- Feed page -->
+
+    <!-- Config page -->
+    <string name="info1">To change your profile picture</string>
+    <string name="info2">· Go to any of your AudioSnaps\n· Tap on the"options" button\n· Select"Set as profile picture"</string>
+
+    <!-- <string name="TERMS_AND_CONDITIONS">When registering you explicitly agree to our <font fgcolor="#484848"><u>Terms of Use</u></font></string> -->
+
+
+    <!-- aqui empiezan nuevas strings ... las mismas que en el iphone ... -->
+
+
+    <!-- Tabs -->
+    <string name="FEED">Feed </string>
+    <string name="FRIENDS">Friends </string>
+    <string name="PROFILE">Me &amp; mine </string>
+    <string name="CAMERA">Take pic </string>
+    <string name="SEARCH">Discover </string>
+    <string name="SELECT_USERNAME">Select a username: </string>
+    <string name="YOUR_EMAIL">Your E-mail: </string>
+    <string name="USERNAME">username </string>
+    <string name="EMAIL">E-mail </string>
+    <string name="PASSWORD">password </string>
+    <string name="CREATE_PASSWORD">Create a password: </string>
+    <string name="PASSWORD_AGAIN">Your password, again: </string>
+    <string name="OLD_PASSWORD">Your old password: </string>
+    <string name="USERNAME_TAKEN">Username taken </string>
+    <string name="YOUR_PASSWORD">Your password: </string>
+    <string name="PRIVACY_MODE">Privacy mode: </string>
+    <string name="CHANGE_USERNAME">You can change your username: </string>
+    <string name="USER_PAGE">Your profile page is http://audiosnaps.com/u/%@ </string>
+    <string name="WELCOME">Welcome! </string>
+    <string name="SETTINGS">Settings </string>
+    <string name="TIME_BETWEEN_NOTIFICATIONS">Time between notifications </string>
+    <string name="BIO">Bio </string>
+    <string name="SHARE_LIKES_IN_FACEBOOK">Share likes in Facebook </string>
+    <string name="SHARE_LIKES_IN_TWITTER">Share likes in Twitter </string>
+    <string name="SAVE_TO_LIBRARY">Save pictures in\nthe device gallery </string>
+    <string name="PROFILE_PICTURE_INSTRUCTIONS"></string>
+    <string name="NOTIFICATIONS_IN_FACEBOOK">in Facebook </string>
+    <string name="NOTIFICATIONS_IN_MY_PHONE">in my iPhone </string>
+    <string name="NOTIFICATIONS_IN_MY_ANDROID">in my device</string>
+    <string name="NOTIFICATIONS_BY_EMAIL">by E-mail </string>
+    <string name="WARNING_LIBRARY_1">Due to iOS restrictions, pictures on the device library cannot contain audio. </string>
+    <string name="WARNING_LIBRARY_2">Your pictures are always saved with audio in audiosnaps.com </string>
+    <string name="LOGIN_TITLE_MESSAGE">Please, login to use AudioSnaps: </string>
+    <string name="LOGIN_WITH_FACEBOOK">LOGIN WITH FACEBOOK </string>
+    <string name="LOGIN_WITH_TWITTER">LOGIN WITH TWITTER </string>
+    <string name="LOGIN_WITH_MAIL">LOGIN WITH YOUR E-MAIL </string>
+    <string name="REGISTER_TITLE_MESSAGE">Please, register to use AudioSnaps: </string>
+    <string name="REGISTER_WITH_FACEBOOK">REGISTER WITH FACEBOOK </string>
+    <string name="REGISTER_WITH_TWITTER">REGISTER WITH TWITTER</string>
+    <string name="REGISTER_WITH_MAIL">REGISTER WITH YOUR E-MAIL </string>
+    <string name="TERMS_AND_CONDITIONS"><![CDATA[When registering you explicitly agree to our <a href="terms"><font color="#484848"><u>Terms of Use</u></font></a>]]></string>
+    <string name="TERMS_WEBVIEW_TITLE">Terms &amp; conditions </string>
+    <string name="LAST_STEP">Last step! </string>
+    <string name="PRIVACY_TITLE_MESSAGE"></string>
+    <string name="ROCKSTAR_COPY">My pictures are public.\nAnybody can follow me. </string>
+    <string name="GRANDMA_COPY">Only my friends and Facebook friends can see my pictures.\nI have to approve each one of my followers. </string>
+    <string name="BUTTON_ROCKSTAR">Register as a ROCKSTAR </string>
+    <string name="BUTTON_GRANDMA">Register as a GRANDMA </string>
+    <string name="PRIVACY_FOOTER_MESSAGE"></string>
+    <string name="PRIVACY_WEBVIEW_TITLE">Privacy </string>
+    <string name="HELP_VISIBLE_GRANDMA"><![CDATA[<b>Your friends and Facebook friends can see this picture</b>]]></string>
+    <string name="HELP_VISIBLE_ROCKSTAR"><![CDATA[<b>This picture is public</b>]]></string>
+    <string name="HELP_HIDDEN_GRANDMA"><![CDATA[<b>Only you can see this picture.</b><br />Make it \"visible\" so you friends and Facebook friends can see it]]></string>
+    <string name="HELP_HIDDEN_ROCKSTAR"><![CDATA[<b>Only you can see this picture.</b><br />Change it to \"visible\" so everybody can see it]]></string>
+
+    <!-- Notification intervals -->
+    <string name="AS_IT_HAPPENS">As it happens</string>
+    <string name="HOURLY">Hourly</string>
+    <string name="DAILY">Daily</string>
+    <string name="WEEKLY">Weekly</string>
+    <string name="MONTHLY">Monthly</string>
+    <string name="NEVER">Never</string>
+    <string name="LOGIN">Login</string>
+    <string name="LOGOUT">Logout</string>
+    <string name="CONFIG">Config</string>
+    <string name="BLOCK">Block</string>
+    <string name="REGISTER">Register</string>
+    <string name="FOLLOW">Follow</string>
+    <string name="UNFOLLOW">Unfollow</string>
+    <string name="APPROVE">Approve</string>
+    <string name="PENDING">Pending</string>
+    <string name="BACK">Back</string>
+    <string name="NEXT">next</string>
+    <string name="PREVIOUS">previous</string>
+
+    <!-- Info user -->
+    <string name="FOLLOWERS">Followers</string>
+
+    <!-- Feed page -->
+    <string name="LIKE">like</string>
+    <string name="LIKE_THIS">Like this</string>
+    <string name="COMMENTS">Comments</string>
+    <string name="COMMENT">Comment</string>
+    <string name="FRIEND">Friend</string>
+    <string name="FOLLOWER">Follower</string>
+    <string name="SUGGESTED">Suggested</string>
+    <string name="ULOADING_PICTURE">Uploading picture</string>
+    <string name="PLACEHOLDER_COMMENTS">Add #hashtags or tag your @friends in your comments</string>
+    <string name="PLACEHOLDER_CAPTION">Add #hashtags or tag your @friends in your pictures</string>
+
+    <!-- Discover -->
+    <string name="PLACEHOLDER_SEARCH_USERS">Find users</string>
+    <string name="PLACEHOLDER_SEARCH_PICS">Find pictures</string>
+
+    <!-- Friends page -->
+    <string name="THIS_IS_YOU">This is you</string>
+    <string name="PENDING_FRIENDS">Pending friend requests</string>
+    <string name="PENDING_FOLLOWERS">Pending follower requests</string>
+    <string name="IS_FOLLOWER">Follows you</string>
+    <string name="IS_NOT_FOLLOWER">Does not follow you</string>
+    <string name="IS_FRIEND">You already follow them</string>
+    <string name="IS_NOT_FRIEND">You don\'t follow them</string>
+    <string name="YOU_BLOCKED_USER">You blocked this user</string>
+    <string name="WAITING_APPROVAL">User is waiting for your approval</string>
+    <string name="ACCEPTED">accepted</string>
+    <string name="FRIENDS_OF">%@ friends</string>
+    <string name="FOLLOWERS_OF">%@ followers</string>
+    <string name="TRENDING_USERS">Trending users</string>
+    <string name="ADD_FRIEND">Add friend</string>
+    <string name="ACCEPT">Accept</string>
+    <string name="PEOPLE">People</string>
+    <string name="PICTURES">Pictures</string>
+    <string name="HIDDEN">Hidden</string>
+    <string name="VISIBLE">Visible</string>
+    <string name="SAVE">Save</string>
+    <string name="FILTER">Filter</string>
+    <string name="SEND_BY_EMAIL">Send picture by e-mail</string>
+    <string name="SEND_BY_WHATSAPP">Send picture by Whatsapp</string>
+    <string name="DELETE_PICTURE">Delete picture</string>
+    <string name="SET_AS_PROFILE_PICTURE">Set as profile picture</string>
+    <string name="SET_PRIVATE">Set private</string>
+    <string name="SET_PUBLIC">Set public</string>
+    <string name="REPORT_PICTURE">Report picture</string>
+    <string name="CANCEL">Cancel</string>
+    <string name="BLOCK_USER">Block user</string>
+    <string name="UNBLOCK_USER">Unblock user</string>
+    <string name="REPORT_FOR_SPAM">Report for spam</string>
+    <string name="LOADING_COMMENTS">Loading comments</string>
+    <string name="ERROR_LOADING_COMMENTS">Error loading comments</string>
+    <string name="NO_COMMENTS">No comments for this picture yet</string>
+    <string name="LOADING_FEED">Loading feed</string>
+    <string name="LOADING_PROFILE">Loading profile</string>
+    <string name="SENDING_SETTINGS">Sending settings</string>
+    <string name="SETTINGS_SAVED">Settings saved</string>
+    <string name="SETTINGS_ERROR">Error</string>
+    <string name="SEARCHING">Searching</string>
+    <string name="SENDING_COMMENT">Sending comment</string>
+    <string name="ERROR_TITLE_GENERIC">Error</string>
+    <string name="CLOSE">Close</string>
+    <string name="CONFIRM_TITLE_GENERIC">Confirm</string>
+    <string name="ARE_YOU_SURE">Are you sure?</string>
+    <string name="LOGOUT_TITLE">Logout</string>
+    <string name="YES">Yes</string>
+    <string name="NO">No</string>
+    <string name="SOC_PROFILE_ASSOCIATED_TO_ANOTHER_USER">Profile associated to another user</string>
+    <string name="EMAIL_EXISTS_WRONG_PASSWORD">Email is already registered</string>
+    <string name="EMAIL_DOESNT_EXISTS">Email doesn\'t exist</string>
+    <string name="WRONG_EMAIL_PASSWORD">Wrong E-mail or password </string>
+    <string name="NOT_UNIQUE_USERNAME">User name taken</string>
+    <string name="NOT_UNIQUE_EMAIL">E-mail already exists </string>
+    <string name="USERNAME_OR_EMAIL_ALREADY_TAKEN">Username or Email already taken</string>
+    <string name="GENERIC_ERROR">An error ocurred</string>
+    <string name="USER_BLOCKED_YOU">You are blocked by this user</string>
+    <string name="YOU_BLOCK_USER">Your pictures will not appear in this user\'s feed anymore</string>
+    <string name="CONFIRM_UNFOLLOW">Are you sure you want to unfollow this user?</string>
+    <string name="EMPTY_FEED">THIS USER\nDOESN\'T HAVE\nANY PUBLIC AUDIOSNAP</string>
+    <string name="PRIVATE_FEED">ONLY APPROVED\nFOLLOWERS CAN\nSEE THIS USER\'S\nPICTURES</string>
+    <string name="NETWORK_ERROR">ERROR\nLOADING\nFEED</string>
+    <string name="GAP_MESSAGE">LOAD\nREMAINING\nAUDIOSNAPS</string>
+    <string name="FEW_SECONDS_AGO">a few seconds ago</string>
+    <string name="SECOND_AGO">%lld second ago</string>
+    <string name="SECONDS_AGO">%lld seconds ago</string>
+    <string name="MINUTE_AGO">%lld minute ago</string>
+    <string name="MINUTES_AGO">%lld minutes ago</string>
+    <string name="HOUR_AGO">%lld hour ago</string>
+    <string name="HOURS_AGO">%lld hours ago</string>
+    <string name="DAY_AGO">%lld day ago</string>
+    <string name="DAYS_AGO">%lld days ago</string>
+    <string name="ON_DATE">on %@</string>
+    <string name="EMAIL_SUBJECT">%@ wants to share an AudioSnap with you</string>
+    <string name="Notification_IReceiveFriendRequest">You received a friend request from %1$s</string>
+    <string name="Notification_MyFriendRequestAccepted">%1$s accepted your friend request</string>
+    <string name="Notification_FriendRequestAutoAccepted">%1$s accepted your friend request</string>
+    <string name="Notification_IHaveNewFollower">%1$s is now following you</string>
+    <string name="Notification_MyPictureIsLiked">%1$s likes your picture</string>
+    <string name="Notification_MyPictureIsLiked2">%1$s and another person like your picture</string>
+    <string name="Notification_MyPictureIsLikedP">%1$s and %2$s other people like your picture</string>
+    <string name="Notification_MyPictureIsCommented">%1$s commented on your picture</string>
+    <string name="Notification_MyPictureIsCommented2">%1$s and another person commented on your picture</string>
+    <string name="Notification_MyPictureIsCommentedP">%1$s and %2$s other people commented on your picture</string>
+    <string name="Notification_PictureICommentedIsCommented">%1$s also commented in this picture</string>
+    <string name="Notification_PictureICommentedIsCommented2">%1$s and another person also commented in this picture</string>
+    <string name="Notification_PictureICommentedIsCommentedP">%1$s and %2$s other people also commented in this picture</string>
+    <string name="Notification_FacebookFriendSignedIn">Your Facebook friend %1$s is now in AudioSnaps</string>
+    <string name="Notification_TwitterFriendSignedIn">Your Twitter friend %1$s is now in AudioSnaps</string>
+    <string name="Notification_YouWhereTagged">You were tagged in this picture</string>
+    <string name="Notification_YouWhereTaggedInComment">You were tagged in this comment</string>
+    <string name="Notification_RequiresUserAction">There is an event that requires your action</string>
+
+    <string name="NO_AUDIO_TITLE">Image without audio</string>
+    <string name="NO_AUDIO_MESSAGE">Only images with audio can be uploaded to AudioSnaps</string>
+    
+    <string name="IS_AUDIOSNAPS_USER">Friends for life</string>
+    
+    <!-- <string name="Notification_RequiresUserAction">There is an event that requires your action</string> -->
+    
+    <string name="notLoadedPage">Page not loaded</string>
+    <string name="ERROR_LOADING">There was a problem loading this page</string>
+    
+    <!-- <string name="CLOSE">Close</string> -->
+
+	<!-- <string name="EMAIL_SUBJECT"><![CDATA[%1$s wants to share an AudioSnap with you]]></string> -->
+	<string name="EMAIL_BODY"><![CDATA[<p>%1$s wants to share this AudioSnap with you:</p><p align=\"center\">http://audiosnaps.com/k/%2$s/</p><p>An AudioSnap is a standard picture with embedded sound that can be shared and viewed in any website or device.</p><p>Check it out!</p>)]]></string>
+    
+	<string name="OK">OK</string>
+    
+	<string name="SHARE_IN_FACEBOOK">Share in Facebook</string>
+	<string name="SHARE_IN_TWITTER">Share in Twitter</string>
+	
+	<string name="NOTIFICATIONS">Notifications</string>
+	
+</resources>
