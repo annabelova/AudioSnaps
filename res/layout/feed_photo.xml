@@ -59,6 +59,15 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/bt_stamp_big_2x" />
 
+            <ImageView
+                android:id="@+id/btnLocalPhoto"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignBottom="@+id/imageViewAudioSnap"
+                android:layout_alignRight="@+id/imageViewAudioSnap"
+                android:layout_marginRight="54dp"
+                android:src="@drawable/bt_stamp_big_2x" />
+
             <TextView
                 android:id="@+id/lblPrivateFeed"
                 android:layout_width="wrap_content"

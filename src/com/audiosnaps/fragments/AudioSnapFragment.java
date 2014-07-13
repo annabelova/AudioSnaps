@@ -215,6 +215,10 @@ public class AudioSnapFragment extends Fragment implements UpdateableFragment {
 
 	private ImageLoader imageLoader;
 	
+	/// begin - by anna
+	private ImageView btnLocalPhoto;
+	/// end - by anna
+	
 	// Fragment new instance
 	public static final AudioSnapFragment newInstance(FeedObject feedObject) {
 		AudioSnapFragment audioSnapFragment = new AudioSnapFragment();
@@ -252,12 +256,20 @@ public class AudioSnapFragment extends Fragment implements UpdateableFragment {
 		feedHeader = (RelativeLayout) view.findViewById(R.id.feedHeaderContent);
 		feedPhoto = (RelativeLayout) view.findViewById(R.id.feedPhoto);
 		feedComments = (LinearLayout) view.findViewById(R.id.feedComments);
-
+		
 		// Views
 		imageViewAudioSnap = (ImageView) view
 				.findViewById(R.id.imageViewAudioSnap);
 		picCorners = (ImageView) view.findViewById(R.id.PicCorners);
 		btnStamp = (ImageView) view.findViewById(R.id.btnStamp);
+		/// begin - by anna
+		btnLocalPhoto = (ImageView) view.findViewById(R.id.btnLocalPhoto);
+		if ( BaseActivity.isXperiaDevice ) {
+			btnLocalPhoto.setVisibility(View.VISIBLE);
+		} else {
+			btnLocalPhoto.setVisibility(View.INVISIBLE);
+		}
+		/// end - by anna
 		feedCaptionBox1 = (TextViewFixTouchConsume) view
 				.findViewById(R.id.feedCaptionBox1);
 		feedCaptionFooter1 = (TextView) view
@@ -1302,6 +1314,16 @@ public class AudioSnapFragment extends Fragment implements UpdateableFragment {
 						}
 					}
 				});
+				
+				/// begin - by anna
+				btnLocalPhoto.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						launchLocalPhotoActivity();
+					}
+				});
+				/// end - by anna
 				
 				imageViewAudioSnap.setOnClickListener(new OnClickListener() {
 					@Override
@@ -3083,6 +3105,17 @@ public class AudioSnapFragment extends Fragment implements UpdateableFragment {
 		}
 
 	}
+	
+	/// begin - by anna
+	private void launchLocalPhotoActivity() {
+		Intent intent = new Intent(getActivity(), MainActivity.class);
+		intent.putExtra(MainActivity.EXIT_CODE, MainActivity.GOTO_LOCALLIBRARY);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		startActivity(intent);
+//		getActivity().finish();
+	}
+	/// end - by anna
 
 	public void setParentView(LinearLayout rowView) {
 		this.parentView=rowView;

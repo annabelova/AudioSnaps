@@ -16,4 +16,6 @@
     <color name="user">#808080</color>
     <color name="gris_loading">#DCDCDC</color>
     
+    <color name="black">#FF000000</color>
+    
 </resources>

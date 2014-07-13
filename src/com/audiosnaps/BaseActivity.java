@@ -51,6 +51,7 @@ public class BaseActivity extends Application {
 
 	// Request codes
 	public static final int TAKE_PICTURE_REQUEST_CODE = 3245;
+	public static final int LOCAL_LIBRARY_REQUEST_CODE = 3246;
 	public static final int USER_CONFIG_REQUEST_CODE = 2956;
 	public static final int COMMENTS_REQUEST_CODE = 9999;
 
@@ -118,7 +119,7 @@ public class BaseActivity extends Application {
 	public static final int MY_FEED = 1;
 	public static final int FRIEND_FEED = 2;
 	public static final int ONE_PICTURE_FEED = 3;
-
+	
 	// Friends list vars
 	public static final int MAIN_LISTS = 0;
 	public static final int FRIEND_LIST = 1;
@@ -161,6 +162,15 @@ public class BaseActivity extends Application {
 	public static final String POSITION = "position";
 
 	public static SimpleFacebookConfiguration configuration;
+	
+	/// begin - by anna
+	public static Boolean isXperiaDevice;
+	
+	public static final String STORAGE_PATH_PREFIX = "/AUDIOSNAPS/";
+    //public static final String TMP_UPLOAD_AUDIOSNAP = "tmp.jpg";
+    public static final String AS_FILE_PREFIX = "AS_";
+    public static final String AS_FILE_SUFFIX = ".audio.jpeg";
+	/// end - by anna
 
 	@Override
 	public void onCreate() {
@@ -285,6 +295,25 @@ public class BaseActivity extends Application {
 		ImageLoader.getInstance().init(config);
 		if (BaseActivity.DEBUG)
 			MyLog.d(TAG, "ImageLoader.getInstance().init(config)");
+		
+		/// begin - by anna
+		isXperiaDevice = true;
+		try {
+	    	Class.forName("com.sonymobile.camera.addon.capturingmode.CapturingModeSelector");
+	    } catch (ClassNotFoundException cnfe) {
+	    	// If the camera add-on library is not found (Camera add-on API not supported),
+	    	// implement suitable exception handling.
+	    	MyLog.e(TAG, "Camera add-on library not found. Handle the exception, eg. finish the activity.");
+	    	cnfe.printStackTrace();
+	    	isXperiaDevice = false;
+	    } catch(SecurityException se) {
+	    	// If a SecurityException (Insufficient privileges) is caught,
+	    	// implement suitable exception handling.
+	    	MyLog.e(TAG, "Camera add-on permission not granted. Handle the exception.");
+	    	se.printStackTrace();
+//	    	showPopupWithMessage("This app does not have sufficient permission to open the camera mode selector. You will need to uninstall and reinstall the app from Google Play. Do you want to proceed?");
+	    	isXperiaDevice = false;
+	    }
+		/// end - by anna
 	}
-
 }

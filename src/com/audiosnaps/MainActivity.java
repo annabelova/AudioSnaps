@@ -91,8 +91,9 @@ public class MainActivity extends FragmentActivity {
 	private static  DisplayMetrics metrics = null;
 	
 	/// begin - by anna
-	public static final String EXIT_CODE			= "EXIT_CODE";
+	public static final String EXIT_CODE					= "EXIT_CODE";
 	public static final String TAKEAUDIOSNAP_THUMBNAIL		= "TAKEAUDIOSNAP_THUMBNAIL";
+	public static final String GOTO_LOCALLIBRARY		= "GOTO_LOCALLIBRARY";
 	/// end - by anna
 
 	public static DisplayMetrics getMetrics() {
@@ -312,7 +313,7 @@ public class MainActivity extends FragmentActivity {
 		viewFlipper.setDisplayedChild(BaseActivity.TAB_ME_AND_MINE);
 		// init myFeed
 		if (myFeedClass == null) {
-			myFeedViewPager = (ListView) findViewById(R.id.feedFriendViewPager2);			
+			myFeedViewPager = (ListView) findViewById(R.id.feedFriendViewPager2);
 			myFeedClass = new FeedVerticalTab(this, fragmentManager, myFeedViewPager);
 			myFeedClass.initFeed(BaseActivity.MY_FEED, LoggedUser.id, null, null);
 		}
@@ -464,6 +465,11 @@ public class MainActivity extends FragmentActivity {
 			stopAudioPlayer();
 			EasyTracker.getTracker().sendView("/u/me/feed");				
 			initTabMeAndMine();
+		} else if ( exitCode.equals(MainActivity.GOTO_LOCALLIBRARY) ) {
+			
+			Intent localLibraryIntent = new Intent(MainActivity.this, LocalLibraryActivity.class);
+			startActivityForResult(localLibraryIntent, BaseActivity.LOCAL_LIBRARY_REQUEST_CODE);			
+			
 		}
 	}
 
@@ -485,9 +491,11 @@ public class MainActivity extends FragmentActivity {
 		// Cuando hemos subido una foto
 		if (requestCode == BaseActivity.TAKE_PICTURE_REQUEST_CODE) {
 			// Update myFeed
-			mReturningWithResult=true;
+			mReturningWithResult = true;
 			
-		}else{
+		} else if (requestCode == BaseActivity.LOCAL_LIBRARY_REQUEST_CODE) {
+			
+		} else {
 			
 			 SimpleFacebook.getInstance(this).onActivityResult(this, requestCode, resultCode, data);
 			 super.onActivityResult(requestCode, resultCode, data);

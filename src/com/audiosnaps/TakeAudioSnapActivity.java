@@ -1,6 +1,7 @@
 package com.audiosnaps;
 
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -119,8 +120,6 @@ public class TakeAudioSnapActivity extends Activity {
 	private int camera, flash, format;
 	
 	/// begin - by anna
-	public static Boolean isXperiaDevice;
-	
 	private ImageButton mModeButton;
     private ImageButton mThumbnailButton;
     private CapturingModeSelector mCapturingModeSelector;
@@ -130,13 +129,6 @@ public class TakeAudioSnapActivity extends Activity {
     private ImageButton cancelBtn;
     private ImageView takePicBtnBgFlow;
     private ImageView takePicBtnBg;
-    
-    public static final String STORAGE_PATH_PREFIX = "/AUDIOSNAPS/";
-    public static final String CACHE_AUDIOSNAPS_FILES = "/AudioSnaps/";
-    public static final String TMP_AUDIOSNAPS_FILES = "/AudioSnaps/Tmp";
-    //public static final String TMP_UPLOAD_AUDIOSNAP = "tmp.jpg";
-    public static final String AS_FILE_PREFIX = "AS_";
-    public static final String AS_FILE_SUFFIX = ".audio.jpeg";
     
     private long mImageId = -1;
     private String mImageFileLocation = null;
@@ -169,27 +161,9 @@ public class TakeAudioSnapActivity extends Activity {
 		setContentView(R.layout.photo);
 		
 		/// begin - by anna
-		isXperiaDevice = true;
-		try {
-        	Class.forName("com.sonymobile.camera.addon.capturingmode.CapturingModeSelector");        	
-        } catch (ClassNotFoundException cnfe) {
-        	// If the camera add-on library is not found (Camera add-on API not supported),
-        	// implement suitable exception handling.
-        	MyLog.e(logTag, "Camera add-on library not found. Handle the exception, eg. finish the activity.");
-        	cnfe.printStackTrace();
-        	isXperiaDevice = false;
-        } catch(SecurityException se) {
-        	// If a SecurityException (Insufficient privileges) is caught,
-        	// implement suitable exception handling.
-        	MyLog.e(logTag, "Camera add-on permission not granted. Handle the exception.");
-        	se.printStackTrace();
-        	showPopupWithMessage("This app does not have sufficient permission to open the camera mode selector. You will need to uninstall and reinstall the app from Google Play. Do you want to proceed?");
-        	isXperiaDevice = false;
-        }
-		
 		mModeButton = ((ImageButton)findViewById(R.id.mode_button));
 		  
-        if (isXperiaDevice){
+        if (BaseActivity.isXperiaDevice){
 	        mModeButton.setImageResource(R.drawable.mode_icon);
 	        mModeButton.setOnClickListener(new ModeSelectorButtonClickListener());
 	        mModeButton.setOnTouchListener(new ModeSelectorButtonTouchListener());
@@ -198,7 +172,7 @@ public class TakeAudioSnapActivity extends Activity {
         	mModeButton = null;
         }
         
-        if (isXperiaDevice) {
+        if (BaseActivity.isXperiaDevice) {
 
         	// Create a parent view for the capturing mode selector view.
         	ViewGroup modeSelectorContainer = (ViewGroup)findViewById(R.id.modeselector_container);
@@ -224,6 +198,11 @@ public class TakeAudioSnapActivity extends Activity {
 				finish();
 			}
 		});
+        if (!BaseActivity.isXperiaDevice) {
+        	mThumbnailButton.setVisibility(View.INVISIBLE);
+        } else {
+        	setThumbnail();
+        }
 		/// end - by anna
 
 		// Camera preferences
@@ -477,8 +456,10 @@ public class TakeAudioSnapActivity extends Activity {
 				startActivity(intent);
 				
 				/// begin - by anna
-				Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
-				mThumbnailButton.setImageBitmap(bmp);
+				if ( BaseActivity.isXperiaDevice ) {
+					Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+					mThumbnailButton.setImageBitmap(bmp);
+				}
 				/// end - by anna
 			}
 
@@ -627,7 +608,13 @@ public class TakeAudioSnapActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		
 		mOrientationEventListener.disable();
+		
+		if (mCapturingModeSelector != null) {
+            mCapturingModeSelector.release();
+            mCapturingModeSelector = null;
+        }
 	}
 
 	public void setCameraFocus(AutoFocusCallback autoFocus) {
@@ -674,9 +661,13 @@ public class TakeAudioSnapActivity extends Activity {
 
 	@Override
 	public void onBackPressed() {
-		// Save prefs
-		saveCameraPrefs();
-		super.onBackPressed();
+		if (mCapturingModeSelector != null && mCapturingModeSelector.isOpened()) {
+            mCapturingModeSelector.close();
+            setViewsVisibility(View.VISIBLE);
+        } else {
+        	saveCameraPrefs();
+            super.onBackPressed();
+        }
 	}
 
 	/// begin - by anna
@@ -703,6 +694,62 @@ public class TakeAudioSnapActivity extends Activity {
             mCapturingModeSelector.close();
             setViewsVisibility(View.VISIBLE);
             setThumbnail();
+
+            /// begin - by anna
+            
+            if (mImageDateTaken == 0) {
+            	return;
+            }
+            
+//            Bitmap bmp = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(), mImageId, MediaStore.Images.Thumbnails.MINI_KIND, null);
+            Bitmap bmp = null;
+			try {
+				bmp = MediaStore.Images.Media.getBitmap(getContentResolver(), MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} finally {
+				ByteArrayOutputStream stream = new ByteArrayOutputStream();
+	            bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+	            byte[] data = stream.toByteArray();
+
+	            
+	            FileOutputStream outStream = null;
+
+				try {
+					// write to local sandbox file system
+					// outStream =
+					// CameraDemo.this.openFileOutput(String.format("%d.jpg",
+					// System.currentTimeMillis()), 0);
+					// Or write to sdcard
+					outStream = new FileOutputStream(jpegPath);
+					outStream.write(data);
+					outStream.close();
+					// if(BaseActivity.DEBUG) MyLog.d(LOG_TAG, "onPictureTaken - wrote bytes: " +
+					// data.length);
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} finally {
+
+					// Save prefs
+					saveCameraPrefs();
+
+					Intent intent = new Intent(context, SendAudioSnapActivity.class);
+					intent.putExtra(EXTRA_AUDIO_PATH, pcmPath);
+					intent.putExtra(EXTRA_PICTURE_PATH, jpegPath);
+					intent.putExtra(EXTRA_FORMAT, format);
+					intent.putExtra(EXTRA_ORIENTATION, mOrientation);
+					intent.setAction(ACTION_TAKE);
+					startActivity(intent);
+				}
+			}
+            /// end - by anna
         }
     }
 
@@ -721,7 +768,9 @@ public class TakeAudioSnapActivity extends Activity {
          */
         @Override
         public void onModeFinish() {
-            mCapturingModeSelector.close();
+        	if (mCapturingModeSelector != null) {
+                mCapturingModeSelector.close();
+            }
             finish();
         }
     }
@@ -735,7 +784,7 @@ public class TakeAudioSnapActivity extends Activity {
         Uri imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
         String[] projection = new String[]{BaseColumns._ID, MediaColumns.DATA, MediaStore.Images.ImageColumns.DATE_TAKEN};
         String order = MediaStore.Images.ImageColumns.DATE_TAKEN + " DESC";
-        String selection =  MediaColumns.DATA + " LIKE '%" + STORAGE_PATH_PREFIX + "%" + AS_FILE_SUFFIX + "'";
+        String selection =  MediaColumns.DATA + " LIKE '%" + BaseActivity.STORAGE_PATH_PREFIX + "%" + BaseActivity.AS_FILE_SUFFIX + "'";
 
         Cursor cursor = null;
         try {
@@ -795,7 +844,7 @@ public class TakeAudioSnapActivity extends Activity {
      * Sets the visibility of the UI elements
      */
     private void setViewsVisibility(int visibility) {
-    	if (isXperiaDevice && this.mModeButton != null)
+    	if (BaseActivity.isXperiaDevice && this.mModeButton != null)
     		mModeButton.setVisibility(visibility);
     	flashBtn.setVisibility(visibility);
         mThumbnailButton.setVisibility(visibility);
@@ -820,19 +869,9 @@ public class TakeAudioSnapActivity extends Activity {
         getLatestImage();
         
         // No image available on device
-        if (mImageDateTaken == 0) {
-            mThumbnailButton.setVisibility(View.INVISIBLE);
-        } else {
+        if (mImageDateTaken != 0) {
             mThumbnailButton.setVisibility(View.VISIBLE);
-            Bitmap bmp = null;
-            
-            bmp = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(),
-                    mImageId, MediaStore.Images.Thumbnails.MINI_KIND, null);
-            /*
-            mThumbnailFilePath = mImageFileLocation;
-            Uri imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-            mThumbnailUri = imageUri.buildUpon().appendPath(String.valueOf(mImageId)).build();
-            */
+            Bitmap bmp = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(), mImageId, MediaStore.Images.Thumbnails.MINI_KIND, null);
             MyLog.v(logTag, "setThumbnail(), display thumbnail");
             mThumbnailButton.setImageBitmap(bmp);
         }

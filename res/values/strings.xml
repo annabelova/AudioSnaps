@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <string name="mode_selector_label">AudioSnaps</string>
     <string name="mode_shortcut_label">AudioSnaps</string>
     <string name="mode_description_label">Take pictures with sound. Start capturing moments.</string>
@@ -21,7 +21,6 @@
     <string name="networkError">Network error</string>
     <string name="emailInUse">E-mail already in use</string>
     <string name="loginError">Login error</string>
-    
     <string name="noSD">We couldn\'t find an SD Card. You need an SD Card to run AudioSnaps</string>
     <string name="noConnection">No internet connection. You must be online to upload pictures</string>
     <string name="uploadedOk">Picture uploaded</string>
@@ -33,6 +32,7 @@
     <string name="retry">Retry</string>
 
     <!-- Feed page -->
+
 
     <!-- Config page -->
     <string name="info1">To change your profile picture</string>
@@ -233,27 +233,25 @@
     <string name="Notification_YouWhereTagged">You were tagged in this picture</string>
     <string name="Notification_YouWhereTaggedInComment">You were tagged in this comment</string>
     <string name="Notification_RequiresUserAction">There is an event that requires your action</string>
-
     <string name="NO_AUDIO_TITLE">Image without audio</string>
     <string name="NO_AUDIO_MESSAGE">Only images with audio can be uploaded to AudioSnaps</string>
-    
     <string name="IS_AUDIOSNAPS_USER">Friends for life</string>
-    
+
     <!-- <string name="Notification_RequiresUserAction">There is an event that requires your action</string> -->
-    
+
     <string name="notLoadedPage">Page not loaded</string>
     <string name="ERROR_LOADING">There was a problem loading this page</string>
-    
+
     <!-- <string name="CLOSE">Close</string> -->
 
-	<!-- <string name="EMAIL_SUBJECT"><![CDATA[%1$s wants to share an AudioSnap with you]]></string> -->
-	<string name="EMAIL_BODY"><![CDATA[<p>%1$s wants to share this AudioSnap with you:</p><p align=\"center\">http://audiosnaps.com/k/%2$s/</p><p>An AudioSnap is a standard picture with embedded sound that can be shared and viewed in any website or device.</p><p>Check it out!</p>)]]></string>
-    
-	<string name="OK">OK</string>
-    
-	<string name="SHARE_IN_FACEBOOK">Share in Facebook</string>
-	<string name="SHARE_IN_TWITTER">Share in Twitter</string>
-	
-	<string name="NOTIFICATIONS">Notifications</string>
-	
+
+    <!-- <string name="EMAIL_SUBJECT"><![CDATA[%1$s wants to share an AudioSnap with you]]></string> -->
+    <string name="EMAIL_BODY"><![CDATA[<p>%1$s wants to share this AudioSnap with you:</p><p align=\"center\">http://audiosnaps.com/k/%2$s/</p><p>An AudioSnap is a standard picture with embedded sound that can be shared and viewed in any website or device.</p><p>Check it out!</p>)]]></string>
+    <string name="OK">OK</string>
+    <string name="SHARE_IN_FACEBOOK">Share in Facebook</string>
+    <string name="SHARE_IN_TWITTER">Share in Twitter</string>
+    <string name="NOTIFICATIONS">Notifications</string>
+    <string name="title_activity_local_library">LocalLibraryActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

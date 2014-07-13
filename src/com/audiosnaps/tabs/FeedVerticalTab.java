@@ -11,9 +11,13 @@ import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.BaseColumns;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
@@ -96,8 +100,7 @@ public class FeedVerticalTab{
 	}
 
 	// Init Feed Fragment
-	public void initFeed(final int mode, final String targetId,
-			final String timeStamp, final String pHash) {
+	public void initFeed(final int mode, final String targetId, final String timeStamp, final String pHash) {
 		
 		// Animaciones animaciones = new Animaciones();
 		// animaciones.scaleViewPx(viewPager, VIEW_PAGER_WIDTH,
@@ -175,6 +178,60 @@ public class FeedVerticalTab{
 	// Refresh from interface
 	public void RefreshFeed() {
 		getFeed(LoggedUser.id, true);
+	}
+	
+	private ArrayList<String> getCameraImages(Context context) {
+		Uri imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+		String[] projection = new String[]{
+				BaseColumns._ID,
+				MediaStore.Images.Media.DATA,
+				MediaStore.Images.ImageColumns.DATE_TAKEN};
+		String order = MediaStore.Images.ImageColumns.DATE_TAKEN + " DESC";
+		String selection =  MediaStore.Images.Media.DATA + " LIKE '%" +
+				BaseActivity.STORAGE_PATH_PREFIX + "%" + BaseActivity.AS_FILE_SUFFIX + "'";
+
+		final Cursor cursor = context.getContentResolver().query(imageUri, projection, selection, null, order);
+
+		ArrayList<String>result = new ArrayList<String>();
+		//String[] result = new String[cursor.getCount()];
+		//String[] thumbs = new String[cursor.getCount()];
+
+		//int index = 0;
+		if (cursor.moveToFirst()) {
+			final int dataColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			//final int idColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media._ID);
+			do {
+				final String data = cursor.getString(dataColumn);
+				//result[index] = data;
+				result.add(data);
+
+				/*
+	            final int mImageId = cursor.getInt(idColumn);
+
+	            Uri mThumbnailUri = imageUri.buildUpon().appendPath(String.valueOf(mImageId)).build();
+	            String path = mThumbnailUri.getPath();
+	            thumbs[index] = path;
+				 */
+				/*
+	            //Thumbnails
+	            String[] columns_to_return = new String[]{
+	            		BaseColumns._ID,
+	            		MediaStore.Images.Thumbnails.THUMB_DATA };
+	            String where = MediaStore.Images.Thumbnails.IMAGE_ID + " = ?";
+	            String valuesAre[]={""+id};
+	            Cursor cursor2 = getContentResolver().query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, columns_to_return, where, valuesAre, null);
+	            if (cursor2.moveToFirst()) {
+	            	final int dataColumn2 = cursor.getColumnIndexOrThrow(MediaStore.Images.Thumbnails.THUMB_DATA);
+	            	final String data2 = cursor.getString(dataColumn2);
+	            	thumbs[index] = data2;
+	            }
+				 */
+
+				//index++;
+			} while (cursor.moveToNext());
+		}
+		cursor.close();
+		return result;
 	}
 
 	// Obtenemos jsonArray feed
